@@ -82,7 +82,7 @@ public class Menu extends BasicGameState{
 	public void keyReleased(int key, char c) {
 	    switch(key) {
 	    case Input.KEY_1:
-	        game.enterState(AiFight.SELECTOR, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+	        game.enterState(AiFight.GAME, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 	        break;
 	    case Input.KEY_2:
 	        // TODO: Implement later
