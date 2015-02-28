@@ -21,6 +21,7 @@ public class AiFight extends StateBasedGame
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new AiFight("Simple Slick Game"));
 			appgc.setDisplayMode(640, 480, false);
+			appgc.setShowFPS(false);
 			appgc.start();
 		}
 		catch (SlickException ex)
@@ -32,6 +33,7 @@ public class AiFight extends StateBasedGame
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
 		
-		addState(new Menu());		
+		//addState(new Menu());
+		addState(new Game());
 	}
 }
