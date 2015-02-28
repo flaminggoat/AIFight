@@ -1,8 +1,12 @@
 package game;
 
+import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
@@ -10,13 +14,17 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
+
 public class Menu extends BasicGameState{
 
 	private StateBasedGame game;
-	private int ID;
+	private int ID;	
+	
+	private Button playButton, highScoreButton, quitButton;
 	
 	public Menu(int ID) {
 		this.ID = ID;
+		
 	}
 
 	@Override
@@ -28,22 +36,44 @@ public class Menu extends BasicGameState{
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
+		
+		Image img = new Image("src/hackathonMenu.jpg");
+		Image scaledImg = img.getScaledCopy(AiFight.WINDOW_WIDTH, AiFight.WINDOW_HEIGHT);
+		
+		g.drawImage(scaledImg, 0, 0);
+		g.setBackground(Color.blue);
 
-		container.setShowFPS(false);
-				
 		g.setColor(Color.white);
-	    g.drawString("Game Title", 10, 10);	   
-	    
-	    g.drawString("1. Play Game", 10, 100);
-	    g.drawString("2. High Scores", 10, 120);
-	    g.drawString("3. Quit", 10, 140);
+	    g.drawString("Game Title", 10, 10);	
+		
+		playButton = new Button(10, 100, 130, 20);
+		playButton.Draw(g);
+		playButton.AddString("1. Play Game", g);
+		
+		highScoreButton = new Button(10, 130, 130, 20);
+		highScoreButton.Draw(g);
+		highScoreButton.AddString("2. High Scores", g);
+		
+		quitButton = new Button(10, 160, 130, 20);
+		quitButton.Draw(g);
+		quitButton.AddString("3. Quit", g);
+				   
 		
 	}
 
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		
+		if(playButton.update(container))
+		{
+	        game.enterState(AiFight.GAME, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+		}
+		
+		if(quitButton.update(container))
+		{
+			container.exit();
+		}
 		
 	}
 	

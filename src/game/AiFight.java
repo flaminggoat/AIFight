@@ -2,15 +2,21 @@ package game;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
+import de.matthiasmann.twl.ToggleButton;
+
 public class AiFight extends StateBasedGame
 {
+	public static final int WINDOW_WIDTH = 640;
+	public static final int WINDOW_HEIGHT = 480;
 	public static final int MAIN_MENU = 0;
 	public static final int GAME = 1;
+	
 	
 	public AiFight(String gamename)
 	{
@@ -23,7 +29,7 @@ public class AiFight extends StateBasedGame
 		{
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new AiFight("Simple Slick Game"));
-			appgc.setDisplayMode(640, 480, false);
+			appgc.setDisplayMode(WINDOW_WIDTH, WINDOW_HEIGHT, false);
 			appgc.setShowFPS(false);
 			appgc.start();
 		}
