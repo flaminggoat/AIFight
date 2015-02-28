@@ -1,14 +1,14 @@
 package game;
 
-import org.lwjgl.LWJGLException;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
+import java.awt.Font;
+
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
@@ -19,6 +19,9 @@ public class Menu extends BasicGameState{
 
 	private StateBasedGame game;
 	private int ID;	
+	private float ButtonWidth = 200;
+	private float ButtonHeight = 20;
+	
 	
 	private Button playButton, highScoreButton, quitButton;
 	
@@ -43,20 +46,19 @@ public class Menu extends BasicGameState{
 		g.drawImage(scaledImg, 0, 0);
 		g.setBackground(Color.blue);
 
-		g.setColor(Color.white);
-	    g.drawString("Game Title", 10, 10);	
+		Font titleFont = new Font("Verdana", Font.BOLD, 28);
+		TrueTypeFont ttf = new TrueTypeFont(titleFont, true);
 		
-		playButton = new Button(10, 100, 130, 20);
+	    ttf.drawString((scaledImg.getWidth()/2) - ttf.getWidth("Game Title")/2, 50,"Game Title");	
+		
+		playButton = new Button((scaledImg.getWidth()/2) - 200/2, 100, ButtonWidth, ButtonHeight, "Play Game");
 		playButton.Draw(g);
-		playButton.AddString("1. Play Game", g);
 		
-		highScoreButton = new Button(10, 130, 130, 20);
+		highScoreButton = new Button((scaledImg.getWidth()/2) - 200/2, 130, ButtonWidth, ButtonHeight, "High Scores");
 		highScoreButton.Draw(g);
-		highScoreButton.AddString("2. High Scores", g);
 		
-		quitButton = new Button(10, 160, 130, 20);
+		quitButton = new Button((scaledImg.getWidth()/2) - 200/2, 160, ButtonWidth, ButtonHeight, "Quit");
 		quitButton.Draw(g);
-		quitButton.AddString("3. Quit", g);
 				   
 		
 	}
