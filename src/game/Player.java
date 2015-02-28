@@ -71,7 +71,7 @@ public class Player {
 	
 	public void draw(Graphics g){
 		g.draw(new Rectangle(x, y, w, h));
-		g.drawAnimation(currentAnimation, x, y);
+		g.drawAnimation(currentAnimation, x - 40, y - 270);
 	}
 	
 	public void update(int delta)
