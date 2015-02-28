@@ -30,7 +30,7 @@ public class Menu extends BasicGameState{
 			throws SlickException {
 
 		container.setShowFPS(false);
-		
+				
 		g.setColor(Color.white);
 	    g.drawString("Game Title", 10, 10);	   
 	    
