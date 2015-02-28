@@ -17,8 +17,7 @@ public class Level {
 		points.add(new Vector2f(100,180));
 		points.add(new Vector2f(600,180));
 		
-	}
-	
+	}	
 	
 	public void draw(Graphics g)
 	{
