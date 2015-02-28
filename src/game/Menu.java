@@ -46,17 +46,14 @@ public class Menu extends BasicGameState{
 		g.setColor(Color.white);
 	    g.drawString("Game Title", 10, 10);	
 		
-		playButton = new Button(10, 100, 130, 20);
+		playButton = new Button(10, 100, 130, 20, "Play Game");
 		playButton.Draw(g);
-		playButton.AddString("1. Play Game", g);
 		
-		highScoreButton = new Button(10, 130, 130, 20);
+		highScoreButton = new Button(10, 130, 130, 20, "High Scores");
 		highScoreButton.Draw(g);
-		highScoreButton.AddString("2. High Scores", g);
 		
-		quitButton = new Button(10, 160, 130, 20);
+		quitButton = new Button(10, 160, 130, 20, "Quit");
 		quitButton.Draw(g);
-		quitButton.AddString("3. Quit", g);
 				   
 		
 	}

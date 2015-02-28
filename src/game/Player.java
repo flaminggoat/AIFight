@@ -29,6 +29,7 @@ public class Player {
 	
 	public void update(int delta)
 	{
+		//Gravity
 		if(level.getHeight(x) > y){
 			speedY += 0.001f;
 		} else {
