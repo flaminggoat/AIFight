@@ -67,12 +67,16 @@ public class Menu extends BasicGameState{
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 		
-		if(playButton.update(container))
+		float mx = container.getInput().getMouseX();
+		float my = container.getInput().getMouseY();
+		boolean mousedown = container.getInput().isMousePressed(Input.MOUSE_LEFT_BUTTON);
+		
+		if(playButton.update(mx,my,mousedown))
 		{
 	        game.enterState(AiFight.SELECTOR, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 		}
 		
-		if(quitButton.update(container))
+		if(quitButton.update(mx,my,mousedown))
 		{
 			container.exit();
 		}

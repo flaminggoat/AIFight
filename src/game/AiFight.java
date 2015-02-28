@@ -43,8 +43,9 @@ public class AiFight extends StateBasedGame
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {	
 		addState(new Menu(MAIN_MENU));
-		addState(new Game(GAME));
-		addState(new Selector(SELECTOR));
+		Game game = new Game(GAME);
+		addState(game);
+		addState(new Selector(SELECTOR, game));
 	}
 
 }

@@ -1,5 +1,7 @@
 package game;
 
+import java.util.ArrayList;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -12,6 +14,14 @@ public class Game extends BasicGameState{
 	private int ID;
 	private Player player;
 	private Level level;
+	ArrayList<Button> functionArray;
+	int currentFunction = 0;
+	int timer = 0;
+	
+	public void setFunctions(ArrayList<Button> buttons)
+	{
+		functionArray = buttons;
+	}
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
@@ -39,6 +49,25 @@ public class Game extends BasicGameState{
 	public void update(GameContainer gc, StateBasedGame game, int delta)
 			throws SlickException {
 		player.update(delta);
+		timer += delta;
+		if(timer > 1000){
+			timer=0;
+			if(functionArray.get(currentFunction).name == "RUN")
+			{
+				player.speedX = 0.08f;
+			}	
+			else if(functionArray.get(currentFunction).name == "STOP")
+			{
+				player.speedX = 0f;
+			}
+			else if(functionArray.get(currentFunction).name == "JUMP")
+			{
+				player.speedY = 1.f;
+			}
+			currentFunction++;
+			if(currentFunction >= functionArray.size())
+				currentFunction = 0;
+		}
 	}
 
 	@Override

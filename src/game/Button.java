@@ -11,7 +11,9 @@ import org.newdawn.slick.TrueTypeFont;
 public class Button {
 
 	private float x, y, width, height;
-	String name;
+	public String name;
+	private TrueTypeFont ttf;
+	private Font buttonFont;
 
 	public Button(int xPosition, int yPosition, float width, float height, String name){
 		
@@ -20,6 +22,9 @@ public class Button {
 		this.width = width;
 		this.height = height;
 		this.name = name;
+		
+		buttonFont = new Font("Verdana", Font.PLAIN, 20);
+		ttf = new TrueTypeFont(buttonFont, true);
 	}
 	
 	public void Draw(Graphics g){
@@ -28,20 +33,12 @@ public class Button {
 		g.setColor(semiTransparent);
 		g.fillRect(x, y, width, height);
 		g.setColor(Color.white);		
-		
-		Font buttonFont = new Font("Verdana", Font.PLAIN, 20);
-		TrueTypeFont ttf = new TrueTypeFont(buttonFont, true);
-		
-		
+
 		ttf.drawString(x + width/2 - ttf.getWidth(name)/2, y + height/2 - ttf.getHeight(name)/2, name);
 	}
 	
-	public boolean update(GameContainer gc){
-		
-		float mx = gc.getInput().getMouseX();
-		float my = gc.getInput().getMouseY();
-		boolean button = gc.getInput().isMousePressed(Input.MOUSE_LEFT_BUTTON);
-		if(button)
+	public boolean update(float mx, float my, boolean mouseDown){
+		if(mouseDown)
 		{
 			if((mx > x && mx < (x + width)) && (my > y && my < (y + height)))
 			{

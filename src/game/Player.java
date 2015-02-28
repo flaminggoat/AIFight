@@ -12,7 +12,7 @@ public class Player {
 		IDLE, RUNNING
 	}
 	
-	private float x, y, w, h, speedX, speedY;
+	public float x, y, w, h, speedX, speedY;
 	private Level level;
 	
 	private Animation currentAnimation, moveRight, jump, land, idle;
@@ -30,7 +30,7 @@ public class Player {
 		this.y = y;
 		w = 20;
 		h = 20;
-		speedX = 0.1f;
+		speedX = 0f;
 		speedY = 0f;
 		this.level = level;
 		try {
@@ -70,8 +70,8 @@ public class Player {
 	}
 	
 	public void draw(Graphics g){
-		g.draw(new Rectangle(x, y, w, h));
-		g.drawAnimation(currentAnimation, x, y-50);
+		//g.draw(new Rectangle(x, y, w, h));
+		g.drawAnimation(currentAnimation, x, y-110);
 	}
 	
 	public void update(int delta)

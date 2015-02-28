@@ -12,13 +12,13 @@ public class Level {
 	public Level(){
 		points = new ArrayList<Vector2f>();
 		
-		points.add(new Vector2f(0,400));
-		points.add(new Vector2f(200,400));
-		points.add(new Vector2f(200,300));
-		points.add(new Vector2f(400,300));
-		points.add(new Vector2f(400,600));
-		points.add(new Vector2f(500,600));
-		points.add(new Vector2f(500,300));
+		points.add(new Vector2f(0,300));
+		//points.add(new Vector2f(200,400));
+		//points.add(new Vector2f(200,300));
+		//points.add(new Vector2f(400,300));
+		//points.add(new Vector2f(400,600));
+		//points.add(new Vector2f(500,600));
+		//points.add(new Vector2f(500,300));
 		points.add(new Vector2f(1024,300));
 	}
 	
