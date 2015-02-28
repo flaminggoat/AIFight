@@ -71,7 +71,7 @@ public class Player {
 	
 	public void draw(Graphics g){
 		g.draw(new Rectangle(x, y, w, h));
-		g.drawAnimation(currentAnimation, x, y+50);
+		g.drawAnimation(currentAnimation, x, y-50);
 	}
 	
 	public void update(int delta)
@@ -91,6 +91,17 @@ public class Player {
 		
 		x += delta*speedX;
 		y += delta*speedY; 
+		
+		if(x>1024){
+			speedX = -speedX;
+			currentAnimation = jump;
+		}
+		
+		if(x<0){
+			speedX = -speedX;
+			currentAnimation = moveRight;
+		}
+			
 	}
 	
 	
