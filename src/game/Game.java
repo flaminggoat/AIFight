@@ -2,6 +2,7 @@ package game;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -22,6 +23,12 @@ public class Game extends BasicGameState{
 	@Override
 	public void render(GameContainer gc, StateBasedGame game, Graphics g)
 			throws SlickException {
+		
+		Image img = new Image("src/Background03.png");
+		Image scaledImg = img.getScaledCopy(AiFight.WINDOW_WIDTH, AiFight.WINDOW_HEIGHT);
+		
+		g.drawImage(scaledImg, 0, 0);
+		
 		g.drawString("Game", 10, 10);
 		player.draw(g);
 		level.draw(g);

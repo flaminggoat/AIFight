@@ -22,7 +22,6 @@ public class Level {
 		points.add(new Vector2f(1024,300));
 	}
 	
-	
 	public void draw(Graphics g)
 	{
 		Vector2f lastPoint = points.get(0);

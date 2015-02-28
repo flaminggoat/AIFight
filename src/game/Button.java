@@ -40,8 +40,7 @@ public class Button {
 		
 		float mx = gc.getInput().getMouseX();
 		float my = gc.getInput().getMouseY();
-		boolean button = gc.getInput().isMouseButtonDown(Input.MOUSE_LEFT_BUTTON);
-		
+		boolean button = gc.getInput().isMousePressed(Input.MOUSE_LEFT_BUTTON);
 		if(button)
 		{
 			if((mx > x && x < mx + width) && (my > y && y < my + height))
