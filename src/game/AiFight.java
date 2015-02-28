@@ -9,6 +9,9 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class AiFight extends StateBasedGame
 {
+	public static final int MAIN_MENU = 0;
+	public static final int GAME = 1;
+	
 	public AiFight(String gamename)
 	{
 		super(gamename);
@@ -21,6 +24,7 @@ public class AiFight extends StateBasedGame
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new AiFight("Simple Slick Game"));
 			appgc.setDisplayMode(640, 480, false);
+			appgc.setShowFPS(false);
 			appgc.start();
 		}
 		catch (SlickException ex)
@@ -30,8 +34,9 @@ public class AiFight extends StateBasedGame
 	}
 
 	@Override
-	public void initStatesList(GameContainer container) throws SlickException {
-		
-		addState(new Menu());		
+	public void initStatesList(GameContainer container) throws SlickException {	
+		addState(new Menu(MAIN_MENU));
+		addState(new Game(GAME));
 	}
+
 }
