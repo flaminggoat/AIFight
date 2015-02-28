@@ -42,24 +42,24 @@ public class Player {
 	}
 	
 	public void init() throws SlickException {
-		
+		float scale = 0.4f;
 		Image sprite = new Image("res/runningGrant.png");
 		
-		Image[] runRight = {sprite.getSubImage(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(660, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(825, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(990, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1155, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1328, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1485, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1650, 0, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1815, 0, SPRITE_WIDTH, SPRITE_HEIGHT),
-							sprite.getSubImage(0, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(660, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(825, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(990, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1155, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1320, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1485, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1650, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1815, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT),
+		Image[] runRight = {sprite.getSubImage(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(660, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(825, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(990, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1155, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1328, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1485, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1650, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1815, 0, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
+							sprite.getSubImage(0, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(660, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(825, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(990, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1155, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1320, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1485, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1650, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1815, SPRITE_ROW_2, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
 							};
 							
 		
 		
-		Image[] jumpImage = {sprite.getSubImage(0, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(660, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(825, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(990, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1155, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1320, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1485, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1650, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1815, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT),
-							 sprite.getSubImage(0, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(660, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(825, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(990, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1155, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1320, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1485, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1650, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1815, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT),
+		Image[] jumpImage = {sprite.getSubImage(0, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(660, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(825, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(990, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1155, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1320, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1485, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1650, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1815, SPRITE_ROW_3, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
+							 sprite.getSubImage(0, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(660, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(825, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(990, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1155, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1320, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1485, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1650, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1815, SPRITE_ROW_4, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
 							};
 		
-		Image[] landImage = {sprite.getSubImage(0, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(660, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(825, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(990, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1155, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1320, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1485, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1650, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(1815, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT),
-							 sprite.getSubImage(0, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(165, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(330, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT),sprite.getSubImage(495, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT),
+		Image[] landImage = {sprite.getSubImage(0, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(660, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(825, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(990, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1155, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1320, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1485, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1650, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(1815, SPRITE_ROW_5, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
+							 sprite.getSubImage(0, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(165, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(330, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),sprite.getSubImage(495, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),
 			};
 		
-		Image[] idleImage = {sprite.getSubImage(0, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT),};
+		Image[] idleImage = {sprite.getSubImage(0, SPRITE_ROW_6, SPRITE_WIDTH, SPRITE_HEIGHT).getScaledCopy(scale),};
 		
 		moveRight = new Animation(runRight, 50, true);
 		jump = new Animation(jumpImage,50,true);
@@ -71,14 +71,14 @@ public class Player {
 	
 	public void draw(Graphics g){
 		g.draw(new Rectangle(x, y, w, h));
-		g.drawAnimation(currentAnimation, x, y);
+		g.drawAnimation(currentAnimation, x, y+50);
 	}
 	
 	public void update(int delta)
 	{
 		//Gravity
 		if(level.getHeight(x) > y){
-			speedY += 0.001f;
+			speedY += 0.002f;
 		} else {
 			speedY -= 0.02f;
 		}
@@ -86,7 +86,7 @@ public class Player {
 		//Air resistance
 		if(speedY > 0)
 		{
-			speedY -= 0.0005f;
+			speedY -= 0.0008f;
 		}
 		
 		x += delta*speedX;
