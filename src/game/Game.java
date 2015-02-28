@@ -17,7 +17,7 @@ public class Game extends BasicGameState{
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
 		level = new Level();
-		player = new Player(level, 10, 80);
+		player = new Player(level, 10, 300);
 	}
 
 	@Override

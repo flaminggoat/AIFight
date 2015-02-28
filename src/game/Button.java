@@ -43,7 +43,7 @@ public class Button {
 		boolean button = gc.getInput().isMousePressed(Input.MOUSE_LEFT_BUTTON);
 		if(button)
 		{
-			if((mx > x && x < mx + width) && (my > y && y < my + height))
+			if((mx > x && mx < (x + width)) && (my > y && my < (y + height)))
 			{
 					return true;
 			}

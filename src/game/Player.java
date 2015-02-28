@@ -78,7 +78,7 @@ public class Player {
 	{
 		//Gravity
 		if(level.getHeight(x) > y){
-			speedY += 0.001f;
+			speedY += 0.002f;
 		} else {
 			speedY -= 0.02f;
 		}
@@ -86,7 +86,7 @@ public class Player {
 		//Air resistance
 		if(speedY > 0)
 		{
-			speedY -= 0.0005f;
+			speedY -= 0.0008f;
 		}
 		
 		x += delta*speedX;
