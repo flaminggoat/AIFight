@@ -16,6 +16,7 @@ public class AiFight extends StateBasedGame
 	public static final int WINDOW_HEIGHT = 768;
 	public static final int MAIN_MENU = 0;
 	public static final int GAME = 1;
+	public static final int SELECTOR = 0;
 	
 	
 	public AiFight(String gamename)
@@ -43,6 +44,7 @@ public class AiFight extends StateBasedGame
 	public void initStatesList(GameContainer container) throws SlickException {	
 		addState(new Menu(MAIN_MENU));
 		addState(new Game(GAME));
+		addState(new Selector(SELECTOR));
 	}
 
 }
