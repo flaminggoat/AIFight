@@ -9,24 +9,29 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Game extends BasicGameState{
 
 	private int ID;
+	private Player player;
+	private Level level;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		
+		level = new Level();
+		player = new Player(level, 10, 80);
 	}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame game, Graphics g)
 			throws SlickException {
 		g.drawString("Game", 10, 10);
-	}
-	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
-			throws SlickException {
-		// TODO Auto-generated method stub
+		player.draw(g);
+		level.draw(g);
 		
+	}
+	
+	@Override
+	public void update(GameContainer gc, StateBasedGame game, int delta)
+			throws SlickException {
+		player.update(delta);
 	}
 
 	@Override
