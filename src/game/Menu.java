@@ -20,10 +20,11 @@ public class Menu extends BasicGameState{
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 
-
+		container.setShowFPS(false);
+		
 		g.setColor(Color.white);
-	    g.drawString("Higher or Lower", 50, 10);
-	 
+	    g.drawString("Game Title", 50, 10);	   
+	    
 	    g.drawString("1. Play Game", 50, 100);
 	    g.drawString("2. High Scores", 50, 120);
 	    g.drawString("3. Quit", 50, 140);
